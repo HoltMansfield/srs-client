@@ -1,7 +1,8 @@
-# ng2-webpack-bare-bones
+# self-reported-study (Client App)
 
-An actual from scratch build up of production ready ng2 app with webpack
+SAAS Platform for Self Reported Studies
 
-Look at all the branches for various progressions
+This is a RESTful api with node that talks to mongo
 
-Look at /docs/npm-scripts.md to get started
+Lots of different testing done with pure unit tests, E2E tests with supertest
+and integration tests where I'm spinning up a test instance of mongo per test
