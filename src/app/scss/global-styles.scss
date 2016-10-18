@@ -5,6 +5,30 @@ $welcomeColor: red;
   color: $welcomeColor;
 }
 
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
+  /* Margin bottom by footer height */
+  margin-bottom: 50px;
   background-color: grey;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  background-color: brown;
+}
+
+.app-header {
+  padding: 5px;
+}
+
+.app-menu {
+  padding: 5px;
 }

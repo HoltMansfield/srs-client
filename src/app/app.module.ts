@@ -29,6 +29,8 @@ import { AppRoutes } from './core/routing/routes.ts'
 // bring in all of our routable components so we can declare them for the router
 import { HomeComponent } from './core/home/home.component.ts'
 import { LoginComponent } from './core/user/login.component.ts'
+import { HeaderComponent } from './core/page/header.component.ts'
+import { FooterComponent } from './core/page/footer.component.ts'
 
 
 import { ContactComponent } from './core/contact/contact.component.ts'
@@ -38,15 +40,17 @@ import { ContactComponent } from './core/contact/contact.component.ts'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 // SASS imports
-import './scss/bootstrap/scss/bootstrap.scss'
+import './scss/bootstrap/bootstrap.scss'
 import './scss/global-styles.scss'
 
 // We need to declare all of our routable components, so we export a tidy array from routes.ts
 let declarations: Component[] = [
   AppComponent,
-  HomeComponent,
-  LoginComponent,
-  ContactComponent
+  HomeComponent,//move to routing
+  LoginComponent,//move to routing
+  ContactComponent,
+  HeaderComponent,
+  FooterComponent
 ]
 
 @NgModule({
