@@ -2,6 +2,7 @@ let webpack = require('webpack')
 let HtmlWebpackPlugin = require('html-webpack-plugin')
 let ExtractTextPlugin = require("extract-text-webpack-plugin")
 let path = require('path')
+let combineLoaders = require('webpack-combine-loaders')
 
 // this module includes our common configuration and constants
 let commonConfig = require('./webpack-common-config.js')
@@ -105,11 +106,17 @@ const configure = function() {
        {
           test: /\.s?css$/,
           exclude: path.join('src', 'app'),
+          // loaders: [
+          //   ExtractTextPlugin.extract('style-loader'),
+          //   'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          //   'sass-loader'
+          // ]
           loaders: [
             // Step 3: ExtractTextPlugin runs the 'style' loader and then takes the css and outputs to a file we name in 'plugins'
             ExtractTextPlugin.extract('style'),
             // Step 2: run the css loader
             'css'
+            //?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss
             ,
             // Step 1: run the sass loader
             'sass'

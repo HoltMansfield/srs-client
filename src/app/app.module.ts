@@ -40,8 +40,8 @@ import { ContactComponent } from './core/contact/contact.component.ts'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 // SASS imports
-import './scss/bootstrap/bootstrap.scss'
-import './scss/global-styles.scss'
+let s = require('./scss/bootstrap/bootstrap.scss')
+let y = require('./scss/global-styles.scss')
 
 // We need to declare all of our routable components, so we export a tidy array from routes.ts
 let declarations: Component[] = [
