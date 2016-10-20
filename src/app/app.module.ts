@@ -13,27 +13,26 @@ import 'rxjs/add/operator/map';
 // need this for ngModel
 import { FormsModule } from '@angular/forms'
 // router
-import { RouterModule } from '@angular/router'
-// our routing strategy
-import { MyPreloadingStrategy } from './core/routing/preloading-strategy.ts'
+import { RouterModule, PreloadAllModules } from '@angular/router'
+
 // our routing guard provider and user provider
-import { EnsureLoginGuard } from './core/routing/guards/ensure-login-guard.ts'
-import { User } from './core/user/user-provider.ts'
+import { EnsureLoginGuard } from './core/routing/guards/ensure-login-guard'
+import { User } from './core/user/user-provider'
 
 
 // our main app component
 import { AppComponent } from './app.component'
 // our routes
-import { AppRoutes } from './core/routing/routes.ts'
+import { AppRoutes } from './core/routing/routes'
 
 // bring in all of our routable components so we can declare them for the router
-import { HomeComponent } from './core/home/home.component.ts'
-import { LoginComponent } from './core/user/login.component.ts'
-import { HeaderComponent } from './core/page/header.component.ts'
-import { FooterComponent } from './core/page/footer.component.ts'
+import { HomeComponent } from './core/home/home.component'
+import { LoginComponent } from './core/user/login.component'
+import { HeaderComponent } from './core/page/header.component'
+import { FooterComponent } from './core/page/footer.component'
 
 
-import { ContactComponent } from './core/contact/contact.component.ts'
+import { ContactComponent } from './core/contact/contact.component'
 
 
 // ngBootstrap
@@ -62,14 +61,13 @@ let declarations: Component[] = [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(AppRoutes,
-      { preloadingStrategy: MyPreloadingStrategy }
+      { preloadingStrategy: PreloadAllModules }
     ),
     NgbModule.forRoot()
   ]
   ,
   providers: [
       { provide: APP_BASE_HREF, useValue: '/' },
-      { provide: MyPreloadingStrategy, useClass: MyPreloadingStrategy },
       { provide: User, useClass: User },
       // defining this like the other providers does not work and I suspect it's because the route definition references this provider with a string name
       { provide: 'EnsureLoginGuard', useClass: EnsureLoginGuard }
