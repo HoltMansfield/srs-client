@@ -1,20 +1,15 @@
-$welcomeColor: red;
+@import './white-label/white-label.scss';
 
-.welcome {
-  font-weight: 500;
-  color: $welcomeColor;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
 html {
   position: relative;
   min-height: 100%;
 }
 body {
-  /* Margin bottom by footer height */
+  /* Margin bottom === footer height */
   margin-bottom: 50px;
-  background-color: grey;
+  background-color: #dbdbdb;
+
+  font-family: Tahoma,Verdana,Segoe,sans-serif;
 }
 .footer {
   position: absolute;
@@ -22,13 +17,9 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 50px;
-  background-color: brown;
+  background-color: #4f4f4f;
 }
 
-.app-header {
-  padding: 5px;
-}
-
-.app-menu {
-  padding: 5px;
+.icon-with-text {
+  vertical-align: middle;
 }

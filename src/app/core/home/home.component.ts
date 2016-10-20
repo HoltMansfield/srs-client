@@ -4,7 +4,10 @@ import { Component } from '@angular/core'
   selector: 'home',
   template:
   `
-    <div>Home View</div>
+    <div style="padding: 15px;">Welcome to the worlds first Self-Reported Study Platform</div>
+    <div>
+
+    </div>
   `
 })
 export class HomeComponent { }
